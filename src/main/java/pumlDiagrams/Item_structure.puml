@@ -1,0 +1,74 @@
+@startuml
+
+class Item extends ToDoList{
++String Desc
++Date Date
++boolean Complete
++getDesc()
++getDate()
++getComplete()
++setDescription()
++setDueDate()
+setIsComplete()
++Item()
++item(String de,Date Da,Boolean c)
+
+}
+Item--getDesc
+Item--getDate
+Item--getComplete
+Item--setDescription
+Item--setDueDate
+Item--setIsComplete
+Item--Item1
+interface getDesc{
+returns Desc String
+}
+
+interface getDate{
+returns Date
+}
+
+interface getComplete{
+returns boolean value Complete
+}
+
+interface setDescription{
++String description
+sets Desc String of Item
+}
+
+interface setDueDate{
++Date dueDate
+sets Date value of Item
+}
+
+interface setIsComplete{
++Boolean isComplete
+sets Complete value of Item
+}
+
+interface Item1{
++String de
++Date da
++Boolean c
+}
+class ToDoList{
+- TextField DescriptionString
+-DatePicker DueDateValue
+-Button AddButton
+'-String desc
+-Date Ddate
+
++ObservableList<Item> listerv
+
++ToDoList(ObservableList lister1)
++ToDoList1()
++AddItem(ActionEvent event)
++AddItemToList(String newDescription,Date dueDate,boolean b)
+-sendData(ActionEvent event)
+}
+
+'interface Item(){}
+
+@enduml

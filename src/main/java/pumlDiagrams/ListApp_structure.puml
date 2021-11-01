@@ -1,0 +1,20 @@
+@startuml
+
+class ListApp extends Application{
++start()
++main()
+}
+ListApp--start
+ListApp--main
+interface start{
++Stage stage
++Scene scene
++FXMLLoader()
++Scene()
+}
+
+interface main{
+'+String[] args
++launch()
+}
+@enduml

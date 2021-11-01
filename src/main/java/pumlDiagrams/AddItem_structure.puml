@@ -1,0 +1,21 @@
+@startuml
+
+class ToDoList{
+- TextField DescriptionString
+-DatePicker DueDateValue
+
+-sendData(ActionEvent event)
+}
+
+ToDoList--sendData
+
+
+interface sendData{
++Item()
++Item u
++ListfxmlFileController()
++ListfxmlFileController controller
+}
+
+
+@enduml

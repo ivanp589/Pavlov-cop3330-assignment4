@@ -1,0 +1,42 @@
+@startuml
+class ListFileActions extends ListfxmlFileController{
++ListFileActions()
++importFromFile()
++openList()
++SaveCurrentList()
+saveAllOpenLists()
+}
+
+ListFileActions--openList
+ListFileActions--SaveCurrentList
+ListFileActions--SaveAllOpenLists
+
+interface importFromFile1{
++File file
++Scanner in
++String line
++String[] split
++addItem()
+}
+importFromFile1 -- ListFileActions
+
+
+interface openList{
++FileChooser chooser
++File file
++importFromFile()
+}
+
+interface SaveCurrentList{
++File saveFile
++FileWriter fw
+
+}
+
+interface SaveAllOpenLists{
++int size,i
++SaveCurrentList()
+}
+
+
+@enduml

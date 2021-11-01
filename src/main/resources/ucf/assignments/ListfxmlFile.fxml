@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="438.0" prefWidth="606.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.ListfxmlFileController">
+   <children>
+      <Button fx:id="DoButton" layoutX="277.0" layoutY="259.0" mnemonicParsing="false" onAction="#actionToDo" text="Add item" />
+      <MenuBar layoutY="1.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#CloseList" text=" Close list" />
+                  <MenuItem mnemonicParsing="false" onAction="#CreateNewList" text="New List" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openList" text="Open list" />
+              <MenuItem mnemonicParsing="false" onAction="#removeItemFromList" text="Delete item" />
+                  <MenuItem mnemonicParsing="false" onAction="#RenameList" text="Rename list" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="531.0" layoutY="219.0" mnemonicParsing="false" onAction="#Refresher" text="Refresh" />
+      <CheckBox fx:id="Complete" layoutX="27.0" layoutY="223.0" mnemonicParsing="false" onAction="#showCompleted" text="Show completed" />
+      <CheckBox fx:id="Incomplete" layoutX="27.0" layoutY="250.0" mnemonicParsing="false" onAction="#showIncomplete" text="Show incomplete" />
+      <Button fx:id="clear" layoutX="531.0" layoutY="258.0" mnemonicParsing="false" onAction="#clearList" prefHeight="26.0" prefWidth="56.0" text="Clear" />
+      <TabPane fx:id="Tabpane" layoutY="27.0" prefHeight="191.0" prefWidth="606.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="ToDoList">
+               <content>
+                  <TableView fx:id="tableView" prefHeight="178.0" prefWidth="606.0">
+                    <columns>
+                      <TableColumn fx:id="CompColumn" onEditCommit="#editIsComplete" onEditStart="#editIsComplete" prefWidth="75.0" text="Completed:" />
+                      <TableColumn fx:id="DateColumn" onEditCommit="#editDueDate" prefWidth="75.0" text="Due Date:" />
+                        <TableColumn fx:id="DescColumn" onEditCommit="#editDescription" prefWidth="454.4000183105469" text="Description:" />
+                    </columns>
+                  </TableView>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+<!--      <Button mnemonicParsing="false" text="Button" />-->
+      <Button layoutX="531.0" layoutY="296.0" mnemonicParsing="false" onAction="#editDescription" prefHeight="26.0" prefWidth="56.0" text="Edit" />
+   </children>
+</AnchorPane>

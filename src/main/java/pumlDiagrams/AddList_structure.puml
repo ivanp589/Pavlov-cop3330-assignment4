@@ -1,0 +1,21 @@
+@startuml
+class Addlist{
++HashMap mapOflisters
++Addlist(String,ObservableList<Item>)
++getMap()
++Addlist()
+}
+
+Addlist--setList
+Addlist--getMap
+
+interface setList{
++String listnamesent
++ObservableList<Item> listsent
+}
+
+interface getMap{
+return HashMap
+}
+
+@enduml

@@ -1,0 +1,234 @@
+@startuml
+
+class ListfxmlFileController implements Initializable{
+'+ObservableList<Item> lister
++Stage stage
+'+ToDoList newlist
++AddList bist
++ListfxmlFileConteroller()
++TableView<Item> tableView
++TableColumn<Item,Boolean> CompColumn
++TableColumn<Item, LocalDate> DateColumn
++TableColumn<Item,String> DescColumn
++TabPane Tabpane
++CheckBox Complete
++CheckBox Incomplete
+
++makeMapOfLists()
++getCurrentList()
++addItem()
++ListfxmlFileConteroller
++determineTab()
++getCompleted()
++showCompleted()
++getIncomplete()
++showIncomplete()
++CloseList()
++CreateNewList()
++RenameList()
++clearList()
++removeItemFromList()
++openList()
++SaveCuurentList()
+SaveAllOpenLists()
+
+
+
+
++actionToDo()
++receiveData()
++initialize()
+-initializer()
+'+getItemS()
++Refresher()
++editDescription()
++editDueDate()
++editIsComplete()
+'+setItem()
+}
+
+ListfxmlFileController-- ListfxmlFileConteroller
+ListfxmlFileController-- actionToDo
+ListfxmlFileController-- receiveData
+ListfxmlFileController-- initialize
+ListfxmlFileController-- initializer
+'ListfxmlFileController-- getItemS
+ListfxmlFileController-- Refresher
+ListfxmlFileController-- editDescription
+ListfxmlFileController-- editDueDate
+ListfxmlFileController-- editIsComplete
+'ListfxmlFileController-- setItem
+
+ListfxmlFileController--makeMapOfLists
+ListfxmlFileController--getCurrentList
+ListfxmlFileController--addItem
+ListfxmlFileController-- determineTab
+ListfxmlFileController--getCompleted
+ListfxmlFileController--showCompleted
+ListfxmlFileController--getIncomplete
+ListfxmlFileController--showIncomplete
+ListfxmlFileController--CloseList
+ListfxmlFileController--CreateNewList
+ListfxmlFileController-- RenameList
+ListfxmlFileController--clearList
+ListfxmlFileController-- removeItemFromList
+ListfxmlFileController--openList
+ListfxmlFileController--SaveCuurentList
+ListfxmlFileController--SaveAllOpenLists
+
+
+interface makeMapOfLists{
++int size,i
++String listName
++ObservableList<Item> list
++AddList()
+}
+
+interface getCompleted{
++ObservableList<Item> completeList
++int size,i
+create a temporary list to add completed items
+}
+
+interface showCompleted{
+makes sure only one checkbox is checked
+sets the table to the completed list
+}
+
+interface getIncomplete{
++ObservableList<Item> incompleteList
++int size,i
+create a temporary list to add incomplete items
+}
+
+interface showIncomplete{
+makes sure only one checkbox is checked
+sets the table to the incomplete list
+}
+
+interface CloseList{
++Tab currentTab
+close the current tab
+}
+
+interface CreateNewList{
++int x
++Tab newtab
++TableView newTable
++TableColumn comp
++TableColumn date
++TableColumn desc
+
+}
+
+interface RenameList{
++Stage stage
++Scene scene
++String listName
++saveCurrentList()
+}
+
+interface clearList{
++getCurrentList()
++clear()
+}
+
+interface removeItemFromList{
++Item item
++getCurrentList
+}
+
+interface openList{
++openList()
+}
+
+interface SaveCuurentList{
++SaveCuurentList()
+}
+
+interface SaveAllOpenLists{
++SaveAllOpenLists()
+}
+
+
+interface getCurrentList{
++Tab currentTab
++determineTab()
++String Tabname
+}
+
+interface addItem{
++LocalDate day
++Boolean complete
+Item addItem
++Item()
+}
+
+
+
+interface initialize{
++ListfxmlFileConteroller()
++initializer()
+initializes the tableView
+sets each column
+
+}
+
+interface determineTab{
++int size,i
++Tab currentTab
+}
+
+
+interface initializer{
+sets the tableView
+simplifies the initialization code
+}
+
+
+
+interface Refresher{
+sets tableView with currrent list
+resets both checkboxes
+}
+
+interface editDescription{
++Item item
+edits a cell in the table
+}
+
+interface editDueDate{
++Item item
+edits a cell in the table
+}
+
+interface editIsComplete{
++Item item
+edits a cell in the table
+}
+
+'interface setItem{
+'prints out the item that was just added
+'}
+interface actionToDo{
++FXMLLoader()
++FXMLLoader fxmlLoader
++Stage stage
++Scene()
++Parent root
+}
+
+
+interface receiveData{
++Item u
+adds to current list
+}
+
+interface ListfxmlFileConteroller{
+sets a new AddList
+sets a new TabPane
++makeMapOfLists()
+}
+
+
+@enduml
